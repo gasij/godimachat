@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация — Godima Chat</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Godima Chat</h1>
+            <p class="subtitle">Создай аккаунт</p>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="username">Имя пользователя</label>
+                    <input type="text" id="username" name="username" required placeholder="ivan" minlength="3">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required placeholder="минимум 6 символов" minlength="6">
+                </div>
+                <div id="error" class="error hidden"></div>
+                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            </form>
+
+            <p class="auth-link">Уже есть аккаунт? <a href="/login">Войти</a></p>
+        </div>
+    </div>
+    <script src="/static/js/auth.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            await register(username, email, password);
+        });
+    </script>
+</body>
+</html>

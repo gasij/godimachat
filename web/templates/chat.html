@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат — Godima Chat</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="chat-layout">
+        <header class="chat-header">
+            <div class="header-left">
+                <h1>Godima Chat</h1>
+                <span id="username" class="badge"></span>
+            </div>
+            <div class="header-right">
+                <span id="status" class="status offline">● офлайн</span>
+                <button id="logoutBtn" class="btn btn-secondary">Выйти</button>
+            </div>
+        </header>
+
+        <main class="chat-main">
+            <div id="messages" class="messages">
+                <!-- Сообщения появляются здесь -->
+            </div>
+        </main>
+
+        <footer class="chat-footer">
+            <form id="messageForm" class="message-form">
+                <input type="text" id="messageInput" placeholder="Напиши сообщение..." autocomplete="off" required>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </footer>
+    </div>
+    <script src="/static/js/chat.js"></script>
+</body>
+</html>
