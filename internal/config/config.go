@@ -40,9 +40,5 @@ func Load() (*Config, error) {
 		JWT_SECRET:  getEnv("JWT_SECRET", ""),
 	}
 
-	if cfg.JWT_SECRET == "" {
-		return nil, fmt.Errorf("JWT_SECRET не задан — скопируй .env.example в .env")
-	}
-
 	return cfg, nil
 }
