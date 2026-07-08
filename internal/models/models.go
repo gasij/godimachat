@@ -11,7 +11,12 @@ type User struct {
 	Password   string    `json:"-"`
 	Created_at time.Time `json:"created_at"`
 }
-
+/*
+фронт в chat.js ждет у сообщений поле username а твоя модель Message не содержит такого поля. 
+Поэтому нужно добавить поле Username в модель Message, чтобы фронт мог получить имя пользователя вместе с сообщением.
+модно добавить отдельную response модель  например MessageResponse что бы api возращал id , user_id username ,content,
+created_at. дальше идешь чисто по шпаргалке ч
+*/
 type Message struct {
 	ID         int       `json:"id"`
 	User_id    int       `json:"user_id"`
